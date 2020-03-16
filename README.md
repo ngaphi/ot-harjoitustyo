@@ -1,5 +1,4 @@
-Examples
+**Ohjelmistotekniikka**
 
-It's very easy to make some words **bold** and other words *italic*.
-
-https://github.com/ngaphi/ot-harjoitustyo/raw/master/laskarit/viikko1/gitlog.txt
+[gitlog.txt](https://github.com/ngaphi/ot-harjoitustyo/raw/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/ngaphi/ot-harjoitustyo/raw/master/laskarit/viikko1/komentorivi.txt)
