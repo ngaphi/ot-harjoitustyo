@@ -10,8 +10,8 @@
 
 muutosA
 
-**Space Invaders**
+# Space Invaders
 
-**Dokumentaatio**
+## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/ngaphi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
