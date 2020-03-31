@@ -4,3 +4,4 @@
 | :----:|:-----| :-----|
 | 17.3. | 5    | tutustuminen gitiin |
 | 24.3. | 10   | junit-test, alustava määrittelydokumentti |
+| 31.3. | 18   | projektin koodin rungon tekeminen |
