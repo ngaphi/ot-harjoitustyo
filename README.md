@@ -2,9 +2,9 @@
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely](https://github.com/ngaphi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/vaatimusmaarittely.md)
 
-[Tuntiaikakirjanpito](https://github.com/ngaphi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+[Tuntiaikakirjanpito](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot
 
