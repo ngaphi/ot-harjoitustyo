@@ -13,7 +13,7 @@
 ### Projektin suoritus
 Projektin koodin suoritetaan komennolla 
 
-* mvn compile exec:java -Dexec.mainClass=spaceinvaders.Starter
+* mvn compile exec:java -Dexec.mainClass=spaceinvaders.ui.Starter
 
 ### Testaus
 
