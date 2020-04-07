@@ -1,4 +1,4 @@
-package spaceinvaders;
+package spaceinvaders.domain;
 
 public interface Sizes {
     int BOARD_WIDTH = 500;

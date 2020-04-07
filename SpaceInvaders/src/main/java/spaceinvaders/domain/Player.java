@@ -1,13 +1,17 @@
-package spaceinvaders;
+package spaceinvaders.domain;
 
-public class Player extends Character {
+public class Player {
     
-    boolean moveRight;
-    boolean moveLeft;
+    public boolean moveRight;
+    public boolean moveLeft;
+    int x;
+    int y;
+    int s;
     
     public Player (int x, int y, int s) {
-        super(x,y,s);
-        
+        this.x = x;
+        this.y = y;
+        this.s = s;
         moveLeft = false;
         moveRight = false;
     }
@@ -19,4 +23,18 @@ public class Player extends Character {
     public boolean MoveLeft() {
         return moveLeft;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getS() {
+        return s;
+    }
+    
+    
 }

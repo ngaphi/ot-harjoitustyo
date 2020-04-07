@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import spaceinvaders.Player;
+import spaceinvaders.domain.Player;
 
 public class PlayerTest {
     
