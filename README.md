@@ -26,3 +26,12 @@ Testikattavuusraportti luodaan komennolla
 * mvn test jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella *target/site/jacoco/index.html*
+
+### Checkstyle
+
+Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
+
+* mvn jxr:jxr checkstyle:checkstyle
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
+
