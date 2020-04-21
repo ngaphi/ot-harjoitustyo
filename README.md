@@ -8,6 +8,10 @@
 
 [Arkkitehtuurikuvaus](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/arkkitehtuuri.md)
 
+## Releaset
+
+[Viikko 5](https://github.com/ngaphi/ot-harjoitustyo/releases)
+
 ## Komentorivitoiminnot
 
 ### Projektin suoritus
@@ -26,6 +30,14 @@ Testikattavuusraportti luodaan komennolla
 * mvn test jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella *target/site/jacoco/index.html*
+
+### Suoritettavan jarin generointi
+
+Komento
+
+* mvn package
+
+generoi hakemistoon *target* suoritettavan jar-tiedoston *SpaceInvaders-1.0-SNAPSHOT.jar*
 
 ### Checkstyle
 
