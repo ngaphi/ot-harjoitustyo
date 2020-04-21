@@ -18,21 +18,21 @@ public class BoardTest {
     @Test
     public void playerIsMovingCorrectly() {
         board.movePlayer();
-        assertEquals(250, board.player.getX());
+        assertEquals(235, board.player.getX());
         assertEquals(380, board.player.getY());
         
         //player is moving right correctly
         board.player.moveRight=true;
         board.player.moveLeft=false;
         board.movePlayer();
-        assertEquals(255, board.player.getX());
+        assertEquals(240, board.player.getX());
         assertEquals(380, board.player.getY());
         
         //player is moving left correctly
         board.player.moveLeft=true;
         board.player.moveRight=false;
         board.movePlayer();
-        assertEquals(250, board.player.getX());
+        assertEquals(235, board.player.getX());
         assertEquals(380, board.player.getY());        
     }
     
@@ -58,7 +58,7 @@ public class BoardTest {
         
         assertEquals(173, board.in[9].getX());
         assertEquals(50, board.in[5].getY());
-//        
+      
         //2. part        
         board.in[4].x=Sizes.BOARD_WIDTH-10;
         
@@ -68,28 +68,8 @@ public class BoardTest {
         board.moveInvaders();
        
         assertEquals(487, board.in[4].getX());
-        assertEquals(10, board.in[4].getY());
-        
-        
-//        board.in[4].x=499;
-//        board.in[4].y=20;
-//       
-////        board.moveInvaders(); 
-//        
-//        board.in[4].moveRight=false;
-//        board.in[4].moveLeft=true;
-//        
-//        board.moveInvaders();
-//
-//        System.out.println(board.in[4].getX());
-//        System.out.println(board.in[4].getY());
-//        System.out.println(board.in[9].getY());
-//        
-//        assertEquals(15, board.in[4].getY());
-//        assertEquals(499, board.in[4].getX());
-//        assertEquals(55, board.in[9].getY());
-//        assertEquals(499, board.in[9].getX());
-////        
+        assertEquals(15, board.in[4].getY());
+   
     }
 
 }
