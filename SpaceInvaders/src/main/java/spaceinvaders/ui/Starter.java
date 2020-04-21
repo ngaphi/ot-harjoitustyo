@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import spaceinvaders.domain.Board;
 import spaceinvaders.domain.Sizes;
 
-public class Starter extends JFrame {
+public final class Starter extends JFrame {
     
     public Starter() {
         UI();
