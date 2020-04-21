@@ -6,4 +6,4 @@
 | 24.3. | 10   | junit-test, alustava määrittelydokumentti |
 | 31.3. | 18   | projektin koodin rungon tekeminen |
 | 07.4. | 17   | projektin laajentaminen, testien kirjoittaminen, checkstyle, sovelluslogiikan tekeminen |
-| 21.4. | 25   | projektin laajentaminen |
+| 21.4. | 25   | projektin laajentaminen, release |
