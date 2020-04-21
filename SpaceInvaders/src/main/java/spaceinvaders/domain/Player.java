@@ -4,6 +4,7 @@ public class Player {
     
     public boolean moveRight;
     public boolean moveLeft;
+    public boolean visible;
     int x;
     int y;
     int s;
@@ -14,6 +15,7 @@ public class Player {
         this.s = s;
         moveLeft = false;
         moveRight = false;
+        visible = true;
     }
     
     public boolean MoveRight() {
@@ -36,5 +38,11 @@ public class Player {
         return s;
     }
     
+    public boolean isVisible() {
+        return visible;
+    }
     
+    public void die() {
+        visible = false;
+    }
 }

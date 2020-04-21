@@ -8,31 +8,48 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.Timer;
-
-
 import javax.swing.JPanel;
 
-public class Board extends JPanel implements Runnable, MouseListener {
+public final class Board extends JPanel implements MouseListener {
 
     private final Dimension d;
-    boolean inGame = true;
-    private Timer timer;
+    private boolean inGame = true;
+    private final Timer timer;
     private Thread animator;
     String message = "Click to Start";
     String name = "Space Invaders";
     public Player player;
-    public Invader[] in = new Invader[10];
+    public Invader[] in = new Invader[Sizes.NUMBER_OF_INVADERS_TO_DESTROY];
+    Bullet bullet;
+    private int deaths = 0;
 
     public Board() {
         addKeyListener(new TAdapter());
         addMouseListener(this);
         setFocusable(true);
         d = new Dimension(Sizes.BOARD_WIDTH, Sizes.BOARD_HEIGHT);
-        player = new Player(Sizes.BOARD_WIDTH / 2, Sizes.BOARD_HEIGHT - 120, 5);
+        timer = new Timer(Sizes.DELAY, new GameCycle());
+        timer.start();
+        gameInit();
 
+        setDoubleBuffered(true);
+    }
+
+    public void gameInit() {
+        //represents player
+        player = new Player(Sizes.BOARD_WIDTH / 2 - 15, Sizes.BOARD_HEIGHT - 120, 5);
+        //represents shot
+        bullet = new Bullet(player.x, player.y, 0, 0);
+
+        //represents invaders
         int inx = 10;
         int iny = 10;
 
@@ -44,12 +61,6 @@ public class Board extends JPanel implements Runnable, MouseListener {
                 iny += 40;
             }
         }
-
-        if (animator == null || !inGame) {
-            animator = new Thread(this);
-            animator.start();
-        }
-        setDoubleBuffered(true);
     }
 
     @Override
@@ -65,18 +76,16 @@ public class Board extends JPanel implements Runnable, MouseListener {
             g.drawLine(0, Sizes.GROUND,
                     Sizes.BOARD_WIDTH, Sizes.GROUND);
 
-            //represents player
-            g.setColor(Color.red);
-            g.fillRect(player.x, player.y, 20, 20);
-
+            //draw player
+            paintPlayer(g);
+            //draw invaders
+            paintInvaders(g);
+            //draw shot
+            paintShot(g);
+            //move player
             movePlayer();
+            //move invaders
             moveInvaders();
-
-            //represents invaders
-            g.setColor(Color.blue);
-            for (Invader in1 : in) {
-                g.fillRect(in1.x, in1.y, 30, 30);
-            }
 
         } else {
             Font small = new Font("Helvetica", Font.BOLD, 20);
@@ -96,32 +105,62 @@ public class Board extends JPanel implements Runnable, MouseListener {
         g.dispose();
     }
 
-    @Override
-    public void run() {
-        long beforeTime, timeDiff, sleep;
+    public void paintPlayer(Graphics g) {
+        g.setColor(Color.red);
+        g.fillRect(player.x, player.y, Sizes.PLAYER_WIDTH, Sizes.PLAYER_HEIGHT);
+    }
 
-        beforeTime = System.currentTimeMillis();
-        int animationDelay = 20;
-        long time
-                = System.currentTimeMillis();
-        while (true) {
-            repaint();
-            try {
-                time += animationDelay;
-                Thread.sleep(Math.max(0, time
-                        - System.currentTimeMillis()));
-            } catch (InterruptedException e) {
-                System.out.println(e);
+    public void paintInvaders(Graphics g) {
+        g.setColor(Color.blue);
+        for (Invader in1 : in) {
+            if (in1.isVisible()) {
+                g.fillRect(in1.x, in1.y, Sizes.INVADER_WIDTH, Sizes.PLAYER_HEIGHT);
+            }
+            if (in1.isDisappearing()) {
+                in1.die();
             }
         }
+    }
 
+    public void paintShot(Graphics g) {
+        if (bullet.shot) {
+            g.setColor(Color.YELLOW);
+            g.fillRect(bullet.x, bullet.y, 4, 8);
+        }
+    }
+
+    private class GameCycle implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            repaint();
+            shoot();
+            collision();
+        }
     }
 
     public void movePlayer() {
         if (player.moveRight == true) {
-            player.x += player.s;
+            if (player.x >= Sizes.BOARD_WIDTH - Sizes.PLAYER_WIDTH) {
+                player.moveRight = false;
+                player.x = Sizes.BOARD_WIDTH - Sizes.PLAYER_WIDTH;
+            } else {
+                player.x += player.s;
+            }
+
         } else if (player.moveLeft == true) {
-            player.x -= player.s;
+            if (player.x <= 0) {
+                player.moveLeft = false;
+                player.x = 0;
+            } else {
+                player.x -= player.s;
+            }
+        }
+    }
+
+    public void shoot() {
+        if (bullet.shot) {
+            bullet.y -= 10;
         }
     }
 
@@ -136,7 +175,7 @@ public class Board extends JPanel implements Runnable, MouseListener {
         }
 
         for (Invader in1 : in) {
-            if (in1.x > Sizes.BOARD_WIDTH) {
+            if (in1.x > Sizes.BOARD_WIDTH - Sizes.INVADER_WIDTH) {
                 for (Invader in2 : in) {
                     in2.moveLeft = true;
                     in2.moveRight = false;
@@ -153,6 +192,49 @@ public class Board extends JPanel implements Runnable, MouseListener {
         }
     }
 
+    public void collision() {
+        if (deaths == Sizes.NUMBER_OF_INVADERS_TO_DESTROY) {
+            inGame = false;
+            timer.stop();
+            message = "You won!";
+        }
+        if (bullet.isVisible()) {
+            int bulletX = bullet.getX();
+            int bulletY = bullet.getY();
+
+            for (Invader invader : in) {
+                int inX = invader.getX();
+                int inY = invader.getY();
+
+                if (invader.isVisible() && bullet.isVisible()) {
+                    if (bulletX >= (inX)
+                            && bulletX <= (inX + Sizes.INVADER_WIDTH)
+                            && bulletY >= (inY)
+                            && bulletY <= (inY + Sizes.INVADER_HEIGHT)) {
+                        invader.setDisappear(true);
+                        bullet = new Bullet(0, 0, 0, 0);
+                        deaths++;
+                        bullet.die();
+                    }
+                }
+            }
+        }
+        List<Invader> invaders = Arrays.asList(in);
+        Iterator<Invader> ins = invaders.iterator();
+
+        while (ins.hasNext()) {
+            Invader invader = ins.next();
+            if (invader.isVisible()) {
+                int y = invader.getY();
+
+                if (y > Sizes.GROUND - Sizes.INVADER_HEIGHT) {
+                    inGame = false;
+                    message = "Invasion!";
+                }
+            }
+        }
+    }
+
     private class TAdapter extends KeyAdapter {
 
         @Override
@@ -160,6 +242,15 @@ public class Board extends JPanel implements Runnable, MouseListener {
             int key = e.getKeyCode();
             player.moveRight = false;
             player.moveLeft = false;
+
+            if (key == KeyEvent.VK_SPACE) {
+                bullet.readyToFire = false;
+                if (bullet.y <= -5) {
+                    bullet = new Bullet(0, 0, 0, 0);
+                    bullet.shot = false;
+                    bullet.readyToFire = true;
+                }
+            }
         }
 
         @Override
@@ -170,6 +261,15 @@ public class Board extends JPanel implements Runnable, MouseListener {
             }
             if (key == KeyEvent.VK_LEFT) {
                 player.moveLeft = true;
+            }
+            if (key == KeyEvent.VK_SPACE) {
+                if (bullet == null) {
+                    bullet.readyToFire = true;
+                }
+                if (!bullet.readyToFire) {
+                    bullet = new Bullet(player.x + 13, player.y, 4, 8);
+                    bullet.shot = true;
+                }
             }
         }
 

@@ -4,7 +4,8 @@ public class Invader{
     
     public boolean moveRight;
     public boolean moveLeft;
-    boolean isVisible;
+    public boolean visible;
+    public boolean disappear;
     
     public int x;
     public int y;
@@ -17,7 +18,7 @@ public class Invader{
         
         moveLeft = false;
         moveRight = true;
-        isVisible = true;
+        visible = true;
     }
 
     public int getX() {
@@ -32,5 +33,19 @@ public class Invader{
         return s;
     }
     
+    public boolean isVisible() {
+        return visible;
+    }
     
+    public void die() {
+        visible = false;
+    }
+
+    public void setDisappear(boolean disappear) {
+        this.disappear = disappear;
+    }
+    
+    public boolean isDisappearing() {
+        return this.disappear;
+    }
 }
