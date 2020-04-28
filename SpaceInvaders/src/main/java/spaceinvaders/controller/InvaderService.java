@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import spaceinvaders.data.Invader;
 import spaceinvaders.data.Sizes;
-
+/**
+ * The class performs functionalities of invaders
+ */
 public class InvaderService {
 
     private final List<Invader> invaders;
@@ -26,7 +28,10 @@ public class InvaderService {
     public List<Invader> getInvaders() {
         return this.invaders;
     }
-
+    
+    /*
+     * This method enables the invaders to move left or right or down
+     */
     public void moveInvaders() {
         for (Invader in : invaders) {
             if (in.moveLeft == true) {
@@ -55,7 +60,10 @@ public class InvaderService {
             }
         }
     }
-
+    
+    /*
+     * This method returns status when the invaders have won the game
+     */
     boolean invadersWon() {
 
         for (Invader in : invaders) {

@@ -1,5 +1,7 @@
 package spaceinvaders.data;
-
+/**
+ * This is a data class for invader
+ */
 public class Invader{
     
     public boolean moveRight;

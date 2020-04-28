@@ -1,5 +1,8 @@
 package spaceinvaders.data;
 
+/**
+ * This contains data of different sizes that are used in the game
+ */
 public interface Sizes {
 
     long SHOT_DELAY = 500;

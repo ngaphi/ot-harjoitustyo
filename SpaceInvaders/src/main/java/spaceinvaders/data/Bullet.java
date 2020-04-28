@@ -1,5 +1,7 @@
 package spaceinvaders.data;
-
+/**
+ * This is a data class for bullet
+ */
 public class Bullet{
     public int x;
     public int y;

@@ -4,6 +4,9 @@ import javax.swing.JFrame;
 import spaceinvaders.controller.Board;
 import spaceinvaders.data.Sizes;
 
+/**
+ * This class will start the program
+ */
 public final class Starter extends JFrame {
     
       public Starter() {

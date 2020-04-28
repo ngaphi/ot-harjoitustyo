@@ -4,7 +4,10 @@ package spaceinvaders.controller;
 import spaceinvaders.data.Player;
 import spaceinvaders.data.Sizes;
 
-class PlayerService {
+/**
+ * The class performs functionalities of player
+ */
+public class PlayerService {
     private final Player player;
 
     public PlayerService() {
@@ -31,6 +34,9 @@ class PlayerService {
         player.moveLeft = move;
     }
     
+    /*
+     * This method enable the player to move left or right
+     */
     public void movePlayer() {
         if (player.moveRight == true) {
             if (player.x >= Sizes.BOARD_WIDTH - Sizes.PLAYER_WIDTH) {

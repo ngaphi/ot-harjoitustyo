@@ -6,7 +6,9 @@ import java.util.ListIterator;
 import spaceinvaders.data.Bullet;
 import spaceinvaders.data.Invader;
 import spaceinvaders.data.Sizes;
-
+/**
+ * The class performs functionalities of shooting
+ */
 public class BulletService {
 
     private final List<Bullet> bullets;
@@ -18,11 +20,16 @@ public class BulletService {
         this.deaths = 0;
         this.lastBulletShot = 0;
     }
-
+    /*
+     * This method returns a list of bullets
+     */
     public List<Bullet> getBullets() {
         return this.bullets;
     }
-
+    
+    /*
+     * This method enables the player to shoot
+     */
     public void shoot(int x, int y) {
         if(System.currentTimeMillis() - lastBulletShot > Sizes.SHOT_DELAY){
             bullets.add(new Bullet(x + 13, y, 4, 8));
@@ -30,6 +37,9 @@ public class BulletService {
         }
     }
 
+    /*
+     * This method will update situation of a bullet when it hits a invader
+     */
     public void updateBullets() {
         ListIterator<Bullet> it = bullets.listIterator();
 
@@ -43,7 +53,10 @@ public class BulletService {
             }
         }
     }
-
+    
+    /*
+     * This method returns number of destroyed invaders
+     */
     public boolean collision(List<Invader> in) {
         for (Bullet bullet : bullets) {
             for (Invader invader : in) {
