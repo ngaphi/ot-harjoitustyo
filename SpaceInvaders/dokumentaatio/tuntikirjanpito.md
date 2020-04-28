@@ -9,4 +9,4 @@
 | 20.4. | 10   | projektin laajentaminen|
 | 21.4. | 15   | projektin laajentaminen, release 1 |
 | 27.4. | 5    | projektin laajentaminen|
-| 28.4. | 9    | projektin laajentaminen, testaus, korjaus, dokumentointi|
+| 28.4. | 9    | projektin laajentaminen, testaus, korjaus, dokumentointi, release 2|
