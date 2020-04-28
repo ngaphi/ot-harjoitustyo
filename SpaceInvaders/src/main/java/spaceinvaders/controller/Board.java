@@ -12,22 +12,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.JPanel;
 import spaceinvaders.data.Bullet;
 import spaceinvaders.data.Invader;
-import spaceinvaders.data.Player;
 import spaceinvaders.data.Sizes;
 
 public final class Board extends JPanel implements MouseListener {
 
     private final Dimension d;
-    private boolean inGame = true;
+    private final boolean inGame = true;
     private final Timer timer;
     private Thread animator;
     String message = "Click to Start";
@@ -144,7 +139,7 @@ public final class Board extends JPanel implements MouseListener {
             
             if (gameLose) {
                 timer.stop();
-                JOptionPane.showMessageDialog(null, "Invasion!");
+                JOptionPane.showMessageDialog(null, "You won!");
             }
         }
     }

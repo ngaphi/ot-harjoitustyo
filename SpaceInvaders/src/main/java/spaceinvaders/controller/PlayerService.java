@@ -1,13 +1,11 @@
 
 package spaceinvaders.controller;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import spaceinvaders.data.Player;
 import spaceinvaders.data.Sizes;
 
 class PlayerService {
-    private Player player;
+    private final Player player;
 
     public PlayerService() {
         this.player = new Player(Sizes.BOARD_WIDTH / 2 - 15, Sizes.GROUND - 20, 5);

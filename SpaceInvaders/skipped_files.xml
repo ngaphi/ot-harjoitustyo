@@ -6,4 +6,6 @@
 
 <suppressions>
     <suppress files="spaceinvaders.ui.Starter.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="spaceinvaders.controller.Board.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="spaceinvaders.data.Sizes.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>
