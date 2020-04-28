@@ -14,7 +14,7 @@ public interface Sizes {
     int GROUND = 410;
     
     int GO_DOWN = 15;
-    int NUMBER_OF_INVADERS_TO_DESTROY = 20;
+    int NUMBER_OF_INVADERS_TO_DESTROY = 10;
     int CHANCE = 3;
     int PLAYER_WIDTH = 30;
     int PLAYER_HEIGHT = 20;   

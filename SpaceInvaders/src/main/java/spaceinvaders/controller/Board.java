@@ -19,6 +19,9 @@ import spaceinvaders.data.Bullet;
 import spaceinvaders.data.Invader;
 import spaceinvaders.data.Sizes;
 
+/**
+ * The class creates game board and functionalities in it
+ */
 public final class Board extends JPanel implements MouseListener {
 
     private final Dimension d;
@@ -43,6 +46,9 @@ public final class Board extends JPanel implements MouseListener {
         setDoubleBuffered(true);
     }
 
+    /*
+     * This method will create characters of the game
+     */
     public void gameInit() {
         //represents player
         playerService = new PlayerService();
@@ -54,7 +60,9 @@ public final class Board extends JPanel implements MouseListener {
         invaderService = new InvaderService();
 
     }
-
+    /*
+     * This method will set color for the background
+     */
     @Override
     public void paint(Graphics g) {
         //set color for background
@@ -96,12 +104,18 @@ public final class Board extends JPanel implements MouseListener {
         Toolkit.getDefaultToolkit().sync();
         g.dispose();
     }
-
+    
+    /*
+     * This method will draw a player for the game
+     */
     public void paintPlayer(Graphics g) {
         g.setColor(Color.red);
         g.fillRect(playerService.getPlayerX(), playerService.getPlayerY(), Sizes.PLAYER_WIDTH, Sizes.PLAYER_HEIGHT);
     }
-
+    
+    /*
+     * This method will draw the invaders for the game
+     */
     public void paintInvaders(Graphics g) {
         g.setColor(Color.blue);
         for (Invader in1 : invaderService.getInvaders()) {
@@ -111,6 +125,9 @@ public final class Board extends JPanel implements MouseListener {
         }
     }
 
+    /*
+     * This method will draw the bullets for the game
+     */
     public void paintShot(Graphics g) {
         for (Bullet bullet : bulletService.getBullets()) {
             if (bullet.visible) {
@@ -120,8 +137,9 @@ public final class Board extends JPanel implements MouseListener {
         }
     }
     
-    
-
+    /**
+     * This class will update the game
+     */
     public class GameCycle implements ActionListener {
 
         @Override
@@ -134,18 +152,21 @@ public final class Board extends JPanel implements MouseListener {
                 timer.stop();
                 JOptionPane.showMessageDialog(null, "You won!");
             }
-            
+
             boolean gameLose = invaderService.invadersWon();
-            
+
             if (gameLose) {
                 timer.stop();
                 JOptionPane.showMessageDialog(null, "You won!");
             }
         }
     }
-
+    
+    /**
+     * This class will control the key codes that are used in the game
+     */
     public class TAdapter extends KeyAdapter {
-
+        
         @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();

@@ -34,6 +34,18 @@ public class PlayerService {
         player.moveLeft = move;
     }
     
+    public void setPlayerX(int x) {
+        player.x=x;
+    }
+    
+    public boolean isMovingRight() {
+        return player.moveRight;
+    }
+    
+    public boolean isMovingLeft() {
+        return player.moveLeft;
+    }
+    
     /*
      * This method enable the player to move left or right
      */

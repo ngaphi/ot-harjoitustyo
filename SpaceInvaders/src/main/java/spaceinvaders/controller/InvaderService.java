@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import spaceinvaders.data.Invader;
 import spaceinvaders.data.Sizes;
+
 /**
  * The class performs functionalities of invaders
  */
@@ -28,7 +29,7 @@ public class InvaderService {
     public List<Invader> getInvaders() {
         return this.invaders;
     }
-    
+
     /*
      * This method enables the invaders to move left or right or down
      */
@@ -44,23 +45,18 @@ public class InvaderService {
 
         Invader firstInvader = invaders.get(0);
         Invader lastInvader = invaders.get(invaders.size() - 1);
+        boolean rightBoundMet = lastInvader.x > Sizes.BOARD_WIDTH - Sizes.INVADER_WIDTH;
+        boolean leftBoundMet = firstInvader.x < 0;
 
-        if (lastInvader.x > Sizes.BOARD_WIDTH - Sizes.INVADER_WIDTH) {
-            for (Invader in2 : invaders) {
-                in2.moveLeft = true;
-                in2.moveRight = false;
-                in2.y += 10;
-            }
-        }
-        if (firstInvader.x < 0) {
-            for (Invader in2 : invaders) {
-                in2.moveRight = true;
-                in2.moveLeft = false;
-                in2.y += 10;
+        if (rightBoundMet || leftBoundMet) {
+            for (Invader in : invaders) {
+                in.moveLeft = !in.moveLeft;
+                in.moveRight = !in.moveRight;
+                in.y += 10;
             }
         }
     }
-    
+
     /*
      * This method returns status when the invaders have won the game
      */
