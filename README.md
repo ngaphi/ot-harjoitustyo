@@ -12,6 +12,8 @@
 
 [Viikko 5](https://github.com/ngaphi/ot-harjoitustyo/releases)
 
+[Viikko 6](https://github.com/ngaphi/ot-harjoitustyo/releases/tag/viikko6)
+
 ## Komentorivitoiminnot
 
 ### Projektin suoritus
