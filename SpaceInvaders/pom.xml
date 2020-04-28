@@ -43,6 +43,8 @@
                 <configuration>
                     <excludes>
                         <exclude>spaceinvaders/ui/*</exclude>
+                        <exclude>spaceinvaders/data/*</exclude>
+                        <exclude>spaceinvaders/controller/Board*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

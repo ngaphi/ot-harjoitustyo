@@ -1,12 +1,12 @@
 package spaceinvaders.ui;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-import spaceinvaders.domain.Board;
-import spaceinvaders.domain.Sizes;
+import spaceinvaders.controller.Board;
+import spaceinvaders.data.Sizes;
 
 public final class Starter extends JFrame {
     
-    public Starter() {
+      public Starter() {
         UI();
     }
     
