@@ -1,5 +1,9 @@
 # Space Invaders
 
+Kyseessä on peliohjelma, jossa pelaaja liikuttelee ruudun alapuolella oleva tykkiä vasemmalle ja oikealle. Tykin liikkuessaan
+pelaaja pystyy ampumaan yläpuolelta liikkuvia avaruusolentoja, jotka siirtyvät hieman alaspäin jokaisen käännöksen jälkeen.
+Sovellus pystyy tallettamaan parhaimpia pistetuloksia.
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/vaatimusmaarittely.md)
