@@ -15,10 +15,12 @@ Sovellusta on toteutettu ensinsijäisesti yhden pelaajan käyttöön.
 * käyttäjä näkee pelin nimi
 * käyttäjä näkee peliin liittyvää informaatiota
 * käyttäjä voi aloittaa pelin painamalla start-nappia
-* käyttäjä voi liikutella tykkiä vasemmalle ja oikealle ampuen yläpuolella olevia olentoja *tehty*
+* käyttäjä voi liikutella tykkiä vasemmalle [tehty]
+* käyttäjä voi liikutella tykkiä oikealle [tehty]
+* käyttäjä voi ampua yläpuolella olevia olentoja [tehty]
 * pelin päätyttyä käyttäjä näkee omaa pistetulosta
 * käyttäjä näkee parhaimpia pistetuloksia suuruusjärjestyksessä (5-10 kpl)
-* käyttäjä voi lopettaa pelin 
+* käyttäjä voi lopettaa pelin [tehty]
 
 ## Jatkokehitysideoita
 
