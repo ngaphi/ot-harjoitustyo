@@ -9,13 +9,21 @@ Ohjelma käynnistetään komennolla
 * java -jar SpaceInvaders-1.0-SNAPSHOT.jar
 
 ## Pelaaminen
+
+Aloitetaan peli painamalla OK.
+
+<img src="https://user-images.githubusercontent.com/48474978/81470871-e5677880-91f5-11ea-8531-1c90d66328c9.png" width="300" height="170" title="s">
+
 Pelaaja voi liikutella alalaidassa olevaa punaista palkkia vasemmalle painamalla näppäintä <- ja oikealle painamalla ->.
 
 Pelaaja voi ampua yläpuolelta lähestyviä olentoja painamalla välilyöntinäppäintä.
 
-<img src="https://user-images.githubusercontent.com/48474978/80526791-fa454000-899b-11ea-9b94-1682e278751b.png" width="400" height="400" title="p">
+Olentojen nopeudet kasvavat joka kerta, kun edellinen erä on tuhottu.
 
-Peli päättyy, kun kaikki olennot ovat tuhottuja tai olennot pääsevät maahan (vihreä viiva).
+<img src="https://user-images.githubusercontent.com/48474978/81470936-658dde00-91f6-11ea-8d7e-16e807ccdf6d.png" width="400" height="400" title="p">
 
-<img src="https://user-images.githubusercontent.com/48474978/80527901-c8cd7400-899d-11ea-81a1-1087038f62e2.png" width="400" height="400" title="p">
+Peli päättyy, kun olennot pääsevät maahan (vihreä viiva).
 
+<img src="https://user-images.githubusercontent.com/48474978/81470836-ae916280-91f5-11ea-9ad1-54473cf1aa6c.png" width="400" height="400" title="p">
+
+Parasta tulosta tallennetaan.
