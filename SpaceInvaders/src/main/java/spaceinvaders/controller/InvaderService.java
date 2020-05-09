@@ -9,10 +9,12 @@ import spaceinvaders.data.Sizes;
  * The class performs functionalities of invaders
  */
 public class InvaderService {
+    private int speed;
 
     private final List<Invader> invaders;
 
-    public InvaderService() {
+    public InvaderService(int speed) {
+        this.speed = speed;
         this.invaders = new ArrayList<>();
 
         for (int i = 0; i < Sizes.NUMBER_OF_INVADERS_TO_DESTROY; i++) {
@@ -36,10 +38,10 @@ public class InvaderService {
     public void moveInvaders() {
         for (Invader in : invaders) {
             if (in.moveLeft == true) {
-                in.x -= 3;
+                in.x -= speed;
             }
             if (in.moveRight == true) {
-                in.x += 3;
+                in.x += speed;
             }
         }
 
@@ -64,9 +66,8 @@ public class InvaderService {
 
         for (Invader in : invaders) {
             if (in.visible && in.y > Sizes.GROUND - Sizes.INVADER_HEIGHT) {
-                System.out.println(in.y);
                 return true;
-            }
+            }  
         }
         return false;
     }

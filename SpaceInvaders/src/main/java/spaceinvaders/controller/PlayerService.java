@@ -11,7 +11,7 @@ public class PlayerService {
     private final Player player;
 
     public PlayerService() {
-        this.player = new Player(Sizes.BOARD_WIDTH / 2 - 15, Sizes.GROUND - 20, 5);
+        this.player = new Player(Sizes.BOARD_WIDTH / 2 - 15, Sizes.GROUND - 20, 10);
     }
     
     public int getPlayerX(){

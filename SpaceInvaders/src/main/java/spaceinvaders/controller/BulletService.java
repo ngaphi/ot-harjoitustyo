@@ -12,14 +12,13 @@ import spaceinvaders.data.Sizes;
 public class BulletService {
 
     private final List<Bullet> bullets;
-    private int deaths;
     private long lastBulletShot;
 
     public BulletService() {
         this.bullets = new ArrayList<>();
-        this.deaths = 0;
         this.lastBulletShot = 0;
     }
+    
     /*
      * This method returns a list of bullets
      */
@@ -49,13 +48,13 @@ public class BulletService {
             if (!b.visible) {
                 it.remove();
             } else {
-                b.y -= 10;
+                b.y -= 20;
             }
         }
     }
     
     /*
-     * This method returns number of destroyed invaders
+     * This method returns true if bullet hits one invader
      */
     public boolean collision(List<Invader> in) {
         for (Bullet bullet : bullets) {
@@ -69,13 +68,13 @@ public class BulletService {
                     if (bulletHitsInvader(bulletX, bulletY, inX, inY)) {
                         invader.visible = false;
                         bullet.visible = false;
-                        deaths++;
+                        return true;
                     }
                 }
             }
         }
-
-        return deaths == Sizes.NUMBER_OF_INVADERS_TO_DESTROY;
+        
+        return false;
     }
 
     private boolean bulletHitsInvader(int bulletX, int bulletY, int inX, int inY) {
@@ -84,4 +83,5 @@ public class BulletService {
                 && bulletY >= (inY)
                 && bulletY <= (inY + Sizes.INVADER_HEIGHT);
     }
+    
 }

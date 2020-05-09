@@ -21,4 +21,5 @@ public interface Sizes {
     int INVADER_WIDTH = 30;
     int INVADER_HEIGHT = 30;
     int DELAY = 17;
+    int INVADER_INITIAL_SPEED = 3;
 }

@@ -8,11 +8,11 @@ import spaceinvaders.data.Sizes;
  * This class will start the program
  */
 public final class Starter extends JFrame {
-    
-      public Starter() {
+
+    public Starter() {
         UI();
     }
-    
+
     public void UI() {
         add(new Board());
         setTitle("Space Invaders");
@@ -21,10 +21,10 @@ public final class Starter extends JFrame {
         setResizable(true);
         setLocationRelativeTo(null);
     }
-    
+
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-
+            
             var ex = new Starter();
             ex.setVisible(true);
         });
