@@ -6,11 +6,13 @@ Sovellus pystyy tallettamaan parhaimpia pistetuloksia.
 
 ## Dokumentaatio
 
+[Käyttöohje](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/kayttoohje.md)
+
 [Vaatimusmäärittely](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/vaatimusmaarittely.md)
 
-[Tuntiaikakirjanpito](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/tuntikirjanpito.md)
-
 [Arkkitehtuurikuvaus](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/arkkitehtuuri.md)
+
+[Tuntiaikakirjanpito](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/tuntikirjanpito.md)
 
 ## Releaset
 
