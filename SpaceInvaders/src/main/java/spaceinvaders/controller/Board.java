@@ -1,7 +1,5 @@
 package spaceinvaders.controller;
 
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -37,7 +35,6 @@ public final class Board extends JPanel{
                 + "\n" + "Click OK to start a game!");
 
         addKeyListener(new TAdapter());
-//        addMouseListener(this);
         setFocusable(true);
         d = new Dimension(Sizes.BOARD_WIDTH, Sizes.BOARD_HEIGHT);
         timer = new Timer(Sizes.DELAY, new GameCycle());
@@ -51,7 +48,7 @@ public final class Board extends JPanel{
     }
 
     /*
-     * This method will set color for the background
+     * This method will paint components and set color for the background
      */
     @Override
     public void paint(Graphics g) {
@@ -143,10 +140,10 @@ public final class Board extends JPanel{
         g.setColor(Color.ORANGE);
         g.setFont(highScore);
         if (score > recentHighScore) {
-            g.drawString("Highest score: " + score, (Sizes.BOARD_WIDTH - fontMetrics2.stringWidth(message)) / 2 - 10,
+            g.drawString("Highest score: " + score, (Sizes.BOARD_WIDTH - fontMetrics2.stringWidth(message)) / 2 - 30,
                     Sizes.BOARD_HEIGHT / 2 + 100);
         } else {
-            g.drawString("Highest score: " + recentHighScore, (Sizes.BOARD_WIDTH - fontMetrics2.stringWidth(message)) / 2 - 10,
+            g.drawString("Highest score: " + recentHighScore, (Sizes.BOARD_WIDTH - fontMetrics2.stringWidth(message)) / 2 - 30,
                     Sizes.BOARD_HEIGHT / 2 + 100);
         }
     }
@@ -224,32 +221,4 @@ public final class Board extends JPanel{
         }
 
     }
-
-//    @Override
-//    public void mousePressed(MouseEvent e) {
-//        int x = e.getX();
-//        int y = e.getY();
-//
-//    }
-//
-//    @Override
-//    public void mouseReleased(MouseEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void mouseEntered(MouseEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void mouseExited(MouseEvent e) {
-//
-//    }
-//
-//    @Override
-//    public void mouseClicked(MouseEvent e) {
-//
-//    }
-
 }

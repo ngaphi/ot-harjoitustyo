@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-
+/**
+ * The class performs functionalities of shooting
+ */
 public class FilesService {
 
     private static final String FILENAME = "highScore.txt";

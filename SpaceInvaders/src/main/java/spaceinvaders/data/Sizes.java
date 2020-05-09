@@ -5,7 +5,7 @@ package spaceinvaders.data;
  */
 public interface Sizes {
 
-    long SHOT_DELAY = 500;
+    long SHOT_DELAY = 300;
     int BOARD_WIDTH = 500;
     int BOARD_HEIGHT = 500;
     int BORDER_RIGHT = 30;

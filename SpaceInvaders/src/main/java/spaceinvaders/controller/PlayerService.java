@@ -1,4 +1,3 @@
-
 package spaceinvaders.controller;
 
 import spaceinvaders.data.Player;
