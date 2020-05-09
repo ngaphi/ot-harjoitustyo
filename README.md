@@ -12,6 +12,8 @@ Sovellus pystyy tallettamaan parhaimpia pistetuloksia.
 
 [Arkkitehtuurikuvaus](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentti](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/testaus.md)
+
 [Tuntiaikakirjanpito](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/dokumentaatio/tuntikirjanpito.md)
 
 ## Releaset
