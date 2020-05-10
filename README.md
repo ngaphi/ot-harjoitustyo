@@ -59,7 +59,7 @@ JavaDocia voi tarkastella avaamalla selaimella tiedosto *target/site/apidocs/ind
 
 ### Checkstyle
 
-Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon [checkstyle.xml](https://github.com/ngaphi/ot-harjoitustyo/blob/master/SpaceInvaders/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
 
 * mvn jxr:jxr checkstyle:checkstyle
 
