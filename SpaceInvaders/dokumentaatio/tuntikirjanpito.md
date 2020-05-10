@@ -15,5 +15,6 @@
 | 06.5. | 4    | korjaus|
 | 07.5. | 3    | korjaus|
 | 08.5. | 6    | projekstin laajentaminen, korjaus|
-| 09.5. |      | projektin viimeistely|
+| 09.5. | 6    | projektin viimeistely|
+| 10.5. | 3    | projektin viimeistely|
 | yht.  | 109  | projektin viimeistely|
