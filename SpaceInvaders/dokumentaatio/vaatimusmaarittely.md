@@ -12,19 +12,19 @@ Sovellusta on toteutettu ensinsijäisesti yhden pelaajan käyttöön.
 
 ## Perusversion tarjoama toiminnallisuus
 
-* käyttäjä näkee pelin nimi [tehty]
-* käyttäjä voi aloittaa pelin painamalla OK-nappia [tehty]
-* käyttäjä voi liikutella tykkiä vasemmalle [tehty]
-* käyttäjä voi liikutella tykkiä oikealle [tehty]
-* käyttäjä voi ampua yläpuolella olevia olentoja [tehty]
-* pelin päätyttyä käyttäjä näkee omaa pistetulosta [tehty]
-* pelin päätyttyä käyttäjä näkee parasta pistetulosta [tehty]
-* käyttäjä voi lopettaa pelin [tehty]
+* käyttäjä näkee pelin nimi
+* käyttäjä voi aloittaa pelin klikkaamalla OK-painiketta
+* käyttäjä voi liikutella tykkiä vasemmalle
+* käyttäjä voi liikutella tykkiä oikealle
+* käyttäjä voi ampua yläpuolella olevia olentoja
+* pelin päätyttyä käyttäjä näkee omaa pistetulosta 
+* pelin päätyttyä käyttäjä näkee parasta pistetulosta 
+* käyttäjä voi lopettaa pelin 
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla
 
-* avaruusolentojen nopeuden muuttuminen [tehty]
+* avaruusolentojen nopeuden muuttuminen
 
 
