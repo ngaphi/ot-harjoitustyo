@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption;
 /**
  * The class performs functionalities of shooting
  */
-public class FilesService {
+public class FileService {
 
     private static final String FILENAME = "highScore.txt";
 

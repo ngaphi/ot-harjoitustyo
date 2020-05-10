@@ -8,15 +8,13 @@ import static org.junit.Assert.*;
 import spaceinvaders.controller.InvaderService;
 import spaceinvaders.data.Sizes;
 
-
-
 public class InvaderServiceTest {
     InvaderService i;
-
+    private int speed;
 
     @Before
     public void setUp() {
-        i = new InvaderService();
+        i = new InvaderService(speed);
     }
     
     @Test
@@ -27,7 +25,7 @@ public class InvaderServiceTest {
        
        i.moveInvaders();
        
-       assertEquals(13, i.getInvaders().get(0).x);
+       assertEquals(10, i.getInvaders().get(0).x);
        assertEquals(10, i.getInvaders().get(0).y);
        
         //2. part     
@@ -39,15 +37,12 @@ public class InvaderServiceTest {
         
         i.moveInvaders();
         
-        assertEquals(487, i.getInvaders().get(4).x);
+        assertEquals(490, i.getInvaders().get(4).x);
         assertEquals(480, i.getInvaders().get(4).y); 
     }
     
     @Test
     public void invadersAreMovingDownCorrectly() {
-        System.out.println(i.getInvaders().get(5).x);
-        System.out.println(i.getInvaders().get(5).y);
-        
         i.getInvaders().get(4).x = 520;
         i.getInvaders().get(3).x = 480;
         i.getInvaders().get(2).x = 440;
@@ -71,12 +66,19 @@ public class InvaderServiceTest {
         i.getInvaders().get(7).y = 50;
         i.getInvaders().get(6).y = 50;
         i.getInvaders().get(5).y = 50;
-
         
         i.moveInvaders();
         
-        assertEquals(60, i.getInvaders().get(9).y); 
+        assertEquals(60, i.getInvaders().get(9).y);         
+    }
+    
+    @Test
+    public void invadersAreWinning() {
+        i.getInvaders().get(9).y = 381;
+        assertTrue(i.invadersWon());
         
+        i.getInvaders().get(9).y = 370;
+        assertFalse(i.invadersWon());
     }
 
 }

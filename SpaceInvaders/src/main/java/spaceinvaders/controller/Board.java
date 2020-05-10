@@ -129,9 +129,9 @@ public final class Board extends JPanel{
         g.drawString("Your score: " + score, (Sizes.BOARD_WIDTH - fontMetrics2.stringWidth(message)) / 2 - 10,
                 Sizes.BOARD_HEIGHT / 2 + 60);
 
-        int recentHighScore = FilesService.readFromFile();
+        int recentHighScore = FileService.readFromFile();
         if (score > recentHighScore) {
-            FilesService.writeToFile(score);
+            FileService.writeToFile(score);
         }
 
         //"High Score"
@@ -161,7 +161,7 @@ public final class Board extends JPanel{
         var fontMetrics = this.getFontMetrics(best);
         g.setColor(Color.orange);
         g.setFont(best);
-        g.drawString("Best: " + FilesService.readFromFile(), 400, 450);
+        g.drawString("Best: " + FileService.readFromFile(), 400, 450);
     }
 
     /**

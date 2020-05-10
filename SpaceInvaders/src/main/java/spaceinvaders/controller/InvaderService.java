@@ -62,7 +62,7 @@ public class InvaderService {
     /*
      * This method returns status when the invaders have won the game
      */
-    boolean invadersWon() {
+    public boolean invadersWon() {
 
         for (Invader in : invaders) {
             if (in.visible && in.y > Sizes.GROUND - Sizes.INVADER_HEIGHT) {
