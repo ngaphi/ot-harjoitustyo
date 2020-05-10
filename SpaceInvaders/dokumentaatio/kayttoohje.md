@@ -1,8 +1,6 @@
 # Käyttöohje
 Lataa tiedosto [SpaceInvaders-1.0-SNAPSHOT.jar](https://github.com/ngaphi/ot-harjoitustyo/releases/tag/viikko6)
 
-## Konfigurointi
-
 ## Ohjelman käynnistäminen
 
 Ohjelma käynnistetään komennolla
